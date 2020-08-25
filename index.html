@@ -5,6 +5,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="images/logo.jpg">
         <title>Hoppi - Discord Bot</title>
 
+    <!-- <img src = "images/logo.jpg" class = "logo"> -->
         <ul class="navigationButtons">
             <li><a href="index.html" class="navigationMain">ʜᴏᴘᴘɪ</li>
             <li><a href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" target="_blank" class="navigation">Invite</a></li>
@@ -15,14 +16,16 @@
 
     <body>
         <div>
+            <br><br><br><br><br>
             <img src="images/logo.jpg" class="logo">
+            <br><br><br><br><br><br>
             <h1 style=
                 "text-align: center;
                 color: white;
                 font-family: Calibri, sans-serif; 
                 font-weight: 700;
                 font-size: 40px;"> 
-                Make An Awesome Discord Server!
+                Make an awesome Discord server with Hoppi!
             </h1>
             <p style=
                 "text-align: center;
@@ -34,9 +37,112 @@
             </p>
             <br>
             <a class="inviteButton" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" target="_blank">Add to Server</a>
+            <a class="featureButton" onclick="
+            features = document.getElementById('featureButton')
+            features.scrollIntoView()">
+            Features</a>
         </div>
         <div>
-            <h2 class="features"><br><br><br>𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</h2>
+            <br><br><br><br><br><br>
+            <p style=
+            "text-align: center; color: #BDBDBF; font-family: Calibri, sans-serif; font-size: 18px; font-style: italic;">
+            Hoppi is still in development!<br>Please report bugs and give feedback <a style="color: skyblue; text-decoration: none; cursor: pointer;" onclick="
+            feedback = document.getElementById('feedbackHeader')
+            feedback.scrollIntoView()">here</a>
+            or in our official <a style="color: skyblue; text-decoration: none;" href="https://discord.gg/bVJtZpZ" target="_blank">support server!</a></p>
+            <br><br><br>
+            <h2 class="features" id="featureButton">𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</h2>
+        </div>
+        <div>
+        <h1 id="feedbackHeader" style=
+            "text-align: center;
+            color: white;
+            font-family: Calibri, sans-serif; 
+            font-weight: 700;
+            font-size: 40px;">Feedback</h1>
+        <p style=
+            "text-align: center;
+            color: #BDBDBF;
+            font-style: italic;
+            font-family: Calibri, sans-serif; 
+            font-size: 20px;">
+            Report bugs or give suggestions here!<br>Just click the type of message you are sending and some details, then click submit!
+        </p>
+        
+        <ul class="feedbackTypes">
+            <li>
+                <input id="feedback" type="checkbox" class="feedbackButton"></button>
+                <label for="feedback" class="feedbackButton">Feedback</label>
+            </li>
+            <li>
+                <input id="suggestion" type="checkbox" class="feedbackButton"></button>
+                <label for="suggestion" class="feedbackButton">Suggestion</label>
+            </li>
+            <li>
+                <input id="bug" type="checkbox" class="feedbackButton"></button>
+                <label for="bug" class="feedbackButton">Bug</label>
+            </li>
+            <li>
+                <input id="blacklistAppeal" type="checkbox" class="feedbackButton"></button>
+                <label for="blacklistAppeal" class="feedbackButton">Blacklist Appeal</label>
+            </li>
+        </ul>
+        
+        <textarea id="feedbackDetails" type="text"
+        placeholder="Explain your message..."
+        style="background-color: skyblue;
+        border: solid 1px black; 
+        border-radius: 10px;
+        outline: none;
+        padding: 10px;
+        height: 100px;
+        width: 300px;
+        font-family: Calibri, sans-serif;
+        font-size: 15px;"></textarea>
+        <br>
+        <br>
+        <button class="submitButton" id="submit" onclick="
+        button = document.getElementById('submit')
+        details = document.getElementById('feedbackDetails')
+        feedback = document.getElementById('feedback')
+        suggestion = document.getElementById('suggestion')
+        bug = document.getElementById('bug')
+        blacklistAppeal = document.getElementById('blacklistAppeal')
+        console.log(checkInput())
+        if (!checkInput()) {
+            alert('❌ Please check a type of message in one of the check boxes before submitting!')
+            return
+        }
+        if (details.value === '') {
+            alert('❌ Please provide details in the text box before submitting!')
+            setTimeout(function() {
+            }, 1000)
+            return
+        }
+        if (confirm('Do you want to submit your message to the developers?')) {
+            details.value=''
+            button.innerHTML = '✔️ Submitted!'
+            feedback.checked = false
+            suggestion.checked = false
+            bug.checked = false
+            blacklistAppeal.checked = false
+            setTimeout(function() {
+                button.innerHTML = 'Submit another'
+            }, 3000)
+        }
+
+        function checkInput () {
+            feedback = document.getElementById('feedback')
+            suggestion = document.getElementById('suggestion')
+            bug = document.getElementById('bug')
+            blacklistAppeal = document.getElementById('blacklistAppeal')
+            if (!suggestion.checked && !suggestion.checked && !bug.checked && !blacklistAppeal.checked) {
+                return false
+            } else {
+                return true
+            }
+        }
+        " >Submit</button>
         </div>
         <script src="scripts.js"></script>
     </body>
