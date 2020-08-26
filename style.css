@@ -7,12 +7,28 @@ body {
 	text-align: center;
 }
 
+.code {
+	font-size: 18px;
+	font-family: 'Courier New', monospace;
+	color: #BDBDBF;
+	background-color: #21201f;
+}
+
 .logo {
 	height: 200px;
 	width: 200px;
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 20px 20px 20px 20px;
+}
+
+img.logo:hover {
+	cursor: pointer;
+}
+
+img:hover {
+	cursor: zoom-in;
+	
 }
 
 .navigationButtons {
@@ -94,11 +110,26 @@ body {
 	position: relative;
 }
 
+.featureStyleDesc {
+	text-align: center;
+	color: #BDBDBF;
+	font-family: 'Calibri', sans-serif; 
+	font-size: 18px;
+}
+
+.featureStyleTitle {
+	text-align: center;
+	color: white;
+	font-family: 'Calibri', sans-serif; 
+	font-weight: 700;
+	font-size: 28px;
+}
+
 a.inviteButton:hover {
 	position: relative;
 	bottom: 12px;
 	background-image: linear-gradient(to right, #9545e6, #5544c2);
-	color: #d9b0ff
+	color: #d9b0ff;
 }
 
 a.featureButton:hover {
