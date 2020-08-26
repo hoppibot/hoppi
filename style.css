@@ -27,7 +27,7 @@ img.logo:hover {
 }
 
 img:hover {
-	cursor: zoom-in;
+	cursor: not-allowed;
 	
 }
 
