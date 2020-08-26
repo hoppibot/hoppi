@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+    <script type="text/javascript" src="scripts.js"></script>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" >
         <link rel="shortcut icon" type="image/x-icon" href="images/logo.jpg">
@@ -15,11 +16,11 @@
     </head>
     <meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" name="google" value="notranslate"/><meta data-react-helmet="true" property="og:image" content="https://app.gitbook.com/share/space/thumbnail/-MEOtU6zNe8v2p5AJQ5h.png"/><meta data-react-helmet="true" property="twitter:card" content="summary"/><meta data-react-helmet="true" property="twitter:site" content="Hoppi Docs"/><meta data-react-helmet="true" name="description" content="The official Hoppi Bot Documentation!"/><meta data-react-helmet="true" property="og:title" content="Hoppi - Discord Bot Documentation"/><meta data-react-helmet="true" property="og:description" content="The official Hoppi Bot Documentation!"/>
 
-
     <body>
+        
         <div>
             <br><br><br><br><br>
-            <img src="images/logo.jpg" class="logo">
+            <img class="logo" src="images/logo.jpg" onclick="window.open('images/logo.jpg', '_blank')">
             <br><br><br><br><br><br>
             <h1 style=
                 "text-align: center;
@@ -39,25 +40,63 @@
             </p>
             <br>
             <a class="inviteButton" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" target="_blank">Add to Server</a>
-            <a class="featureButton" onclick="
-            features = document.getElementById('featureButton')
-            features.scrollIntoView()">
+            <a class="featureButton" onclick="scrollToFeatures()
+            // features = document.getElementById('featuresHeader')
+            // features.scrollIntoView()">
             Features</a>
-        </div>
-        <div>
             <br><br><br><br><br><br>
+            <h2 style="text-align: center;
+            color: white;
+            font-family: Calibri, sans-serif; 
+            font-weight: 700;">If you like Hoppi, consider joining our Support server!</h2>
             <p style=
-            "text-align: center; color: #BDBDBF; font-family: Calibri, sans-serif; font-size: 18px; font-style: italic;">
-            Hoppi is still in development!<br>Please report bugs and give feedback <a style="color: skyblue; text-decoration: none; cursor: pointer;" onclick="
-            feedback = document.getElementById('feedbackHeader')
-            feedback.scrollIntoView()">here</a>
-            or in our official <a style="color: skyblue; text-decoration: none;" href="https://discord.gg/bVJtZpZ" target="_blank">support server!</a></p>
-            <br><br><br>
-            <h2 class="features" id="featureButton">𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</h2>
+            "text-align: center;
+            color: #BDBDBF;
+            font-style: italic;
+            font-family: Calibri, sans-serif; 
+            font-size: 20px;">You can give feedback, suggestions, report bugs, hang out, or just talk with other users!<br>We welcome all members that follow our community rules.</p>
+            <iframe src="https://discordapp.com/widget?id=733727076464459906&theme=dark" width="350" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </div>
         <div>
+            <br><br><br>
+            <br><br><br>
+            <h2 class="features" id="featuresHeader">𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</h2>
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 25px 0 0;" src="images/leaderboard.png">
+            <div style="display: inline-block;">
+                <p class="featureStyleTitle">Currency</p>
+                <p class="featureStyleDesc">Earn currency by gambling, begging, or getting it for free,<br> and try to become the richest user in the <strong>WORLD!</strong><br>(In the world of Hoppi)</p>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+            
+            <div style="display: inline-block;">
+                <p class="featureStyleTitle">Fun</p>
+                <p class="featureStyleDesc">Use commands or play games<br>using Hoppi's vast category of fun commands!</p>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 0 0 25px;" src="images/rpsPlaying.png">
+            
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 25px 0 0 ;" src="images/deepfry.png">
+            <div style="display: inline-block;">
+                <p class="featureStyleTitle">Photoshop</p>
+                <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">Edit images easily by either mentioning a user to use their profile pic,<br>or provide a link and Hoppi will use that image!<br>Hoppi only supports these image formats: <div class="code" style="display: inline;">png, jpeg, gif, bmp, tiff</div></p>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+
+            <div style="display: inline-block;">
+                <p class="featureStyleTitle">Memes</p>
+                <p class="featureStyleDesc">Create memes using Hoppi's meme creator feature!<br>Specify the template (see templates by using <span class="code">;meme templates</span>),<br> and then your texts separated by two dashes!</p>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 0 0 25px;" src="images/meme.png">
+            
+
+            
+        </div>
+        <div>
+        
         <h1 id="feedbackHeader" style=
             "text-align: center;
+            display: inline-block;
             color: white;
             font-family: Calibri, sans-serif; 
             font-weight: 700;
@@ -68,10 +107,10 @@
             font-style: italic;
             font-family: Calibri, sans-serif; 
             font-size: 20px;">
-            Report bugs or give suggestions here!<br>Just click the type of message you are sending and some details, then click submit!
+            Report bugs or give suggestions here!<br>Click the type of message you are sending and enter some details, then click submit!
         </p>
         
-        <ul class="feedbackTypes">
+        <!-- <ul class="feedbackTypes">
             <li>
                 <input id="feedback" type="checkbox" class="feedbackButton"></button>
                 <label for="feedback" class="feedbackButton">Feedback</label>
@@ -88,65 +127,29 @@
                 <input id="blacklistAppeal" type="checkbox" class="feedbackButton"></button>
                 <label for="blacklistAppeal" class="feedbackButton">Blacklist Appeal</label>
             </li>
-        </ul>
+        </ul> -->
         
-        <textarea id="feedbackDetails" type="text"
-        placeholder="Explain your message..."
-        style="background-color: skyblue;
-        border: solid 1px black; 
-        border-radius: 10px;
-        outline: none;
-        padding: 10px;
-        height: 100px;
-        width: 300px;
-        font-family: Calibri, sans-serif;
-        font-size: 15px;"></textarea>
+        <!-- <textarea id="feedbackDetails" type="text" maxlength="200"
+            placeholder="Explain your message..."
+            style="background-color: skyblue;
+            border: solid 1px black; 
+            border-radius: 10px;
+            outline: none;
+            padding: 10px;
+            height: 100px;
+            width: 300px;
+            font-family: Calibri, sans-serif;
+            font-size: 15px;"></textarea> -->
         <br>
-        <br>
-        <button class="submitButton" id="submit" onclick="
-        button = document.getElementById('submit')
-        details = document.getElementById('feedbackDetails')
-        feedback = document.getElementById('feedback')
-        suggestion = document.getElementById('suggestion')
-        bug = document.getElementById('bug')
-        blacklistAppeal = document.getElementById('blacklistAppeal')
-        console.log(checkInput())
-        if (!checkInput()) {
-            alert('❌ Please check a type of message in one of the check boxes before submitting!')
-            return
-        }
-        if (details.value === '') {
-            alert('❌ Please provide details in the text box before submitting!')
-            setTimeout(function() {
-            }, 1000)
-            return
-        }
-        if (confirm('Do you want to submit your message to the developers?')) {
-            details.value=''
-            button.innerHTML = '✔️ Submitted!'
-            feedback.checked = false
-            suggestion.checked = false
-            bug.checked = false
-            blacklistAppeal.checked = false
-            setTimeout(function() {
-                button.innerHTML = 'Submit another'
-            }, 3000)
-        }
-
-        function checkInput () {
-            feedback = document.getElementById('feedback')
-            suggestion = document.getElementById('suggestion')
-            bug = document.getElementById('bug')
-            blacklistAppeal = document.getElementById('blacklistAppeal')
-            if (!suggestion.checked && !suggestion.checked && !bug.checked && !blacklistAppeal.checked) {
-                return false
-            } else {
-                return true
-            }
-        }
-        " >Submit</button>
+        <iframe style="width: 500px; height: 600px;"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfXMPPoYJLVAuiKUrmHA20QF063oP5auqG5ddRTCgvxpGYSFw/viewform"></iframe>
         </div>
-        <script src="scripts.js"></script>
+        <p style=
+            "text-align: center; color: #BDBDBF; font-family: Calibri, sans-serif; font-size: 18px; font-style: italic;">
+            Hoppi is still in development!<br>Please report bugs and give feedback above
+            or in our official <a style="color: skyblue; text-decoration: none;" href="https://discord.gg/bVJtZpZ" target="_blank">support server!</a></p>
+            
+        
     </body>
 </html>
 
