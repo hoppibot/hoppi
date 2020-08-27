@@ -14,21 +14,25 @@
             <li><a href="https://hoppi-discord.gitbook.io/hoppi-docs/" class="navigation" target="_blank">Docs</a></li>
         </ul>
     </head>
-    <meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" name="google" value="notranslate"/><meta data-react-helmet="true" property="og:image" content="https://app.gitbook.com/share/space/thumbnail/-MEOtU6zNe8v2p5AJQ5h.png"/><meta data-react-helmet="true" property="twitter:card" content="summary"/><meta data-react-helmet="true" property="twitter:site" content="Hoppi Docs"/><meta data-react-helmet="true" name="description" content="The official Hoppi Bot Documentation!"/><meta data-react-helmet="true" property="og:title" content="Hoppi - Discord Bot Documentation"/><meta data-react-helmet="true" property="og:description" content="The official Hoppi Bot Documentation!"/>
+    <meta data-react-helmet="true" name="viewport" 
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta data-react-helmet="true" charset="utf-8"/>
+    <meta data-react-helmet="true" name="google" value="notranslate"/>
+    <meta data-react-helmet="true" property="og:image" 
+        content="https://i.imgur.com/WNvcYtD.jpg"/>
+    <meta data-react-helmet="true" property="twitter:card" content="summary"/>
+    <meta data-react-helmet="true" property="twitter:site" content="Hoppi Website"/>
+    <meta data-react-helmet="true" name="description" content="The official Hoppi website!"/>
+    <meta data-react-helmet="true" property="og:title" content="Hoppi - the Discord Bot"/>
+    <meta data-react-helmet="true" property="og:description" content="The official Hoppi website!"/>
 
     <body>
         
         <div>
             <br><br><br><br><br>
-            <img class="logo" src="images/logo.jpg" onclick="window.open('images/logo.jpg', '_blank')">
-            <br><br><br><br><br><br>
-            <h1 style=
-                "text-align: center;
-                color: white;
-                font-family: Calibri, sans-serif; 
-                font-weight: 700;
-                font-size: 40px;"> 
-                Make an awesome Discord server with Hoppi!
+            <img title="Hoppi Logo" class="logo" src="images/logo.jpg" onclick="window.open('images/logo.jpg', '_blank')">
+            <br><br><br>
+            <h1 class="title"> Make an awesome Discord server with Hoppi!
             </h1>
             <p style=
                 "text-align: center;
@@ -39,11 +43,12 @@
                 Games, currency, photoshop, memes, and much more!
             </p>
             <br>
-            <a class="inviteButton" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" target="_blank">Add to Server</a>
-            <a class="featureButton" onclick="scrollToFeatures()
-            // features = document.getElementById('featuresHeader')
-            // features.scrollIntoView()">
-            Features</a>
+            <a class="inviteButton" title="Add Hoppi to your server" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" 
+            target="_blank">Add to Server</a><br><br><br>
+            <a class="featureButton" title="See Hoppi's features" onclick="scrollToFeatures()">Features</a>
+            <a class="feedbackScrollButton" title="Give feedback to Hoppi" onclick="scrollToFeedback()">Feedback</a>
+            <a class="verifyScrollButton" title="Verify with Hoppi" onclick="scrollToVerify()">Verify</a>
+            <a class="supportScrollButton" title="Our support server" href="https://discord.gg/bVJtZpZ" target="_blank">Server</a>
             <br><br><br><br><br><br>
             <h2 style="text-align: center;
             color: white;
@@ -55,44 +60,78 @@
             font-style: italic;
             font-family: Calibri, sans-serif; 
             font-size: 20px;">You can give feedback, suggestions, report bugs, hang out, or just talk with other users!<br>We welcome all members that follow our community rules.</p>
-            <iframe src="https://discordapp.com/widget?id=733727076464459906&theme=dark" width="350" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            <iframe id="supportWidget" src="https://discordapp.com/widget?id=733727076464459906&theme=dark" width="350" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </div>
         <div>
-            <br><br><br>
             <br><br><br>
             <h2 class="features" id="featuresHeader">𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</h2>
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 25px 0 0;" src="images/leaderboard.png">
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 25px 50px 0;" src="images/leaderboard.png">
             <div style="display: inline-block;">
-                <p class="featureStyleTitle">Currency</p>
+                <p class="featureStyleTitle"><br>Currency</p>
                 <p class="featureStyleDesc">Earn currency by gambling, begging, or getting it for free,<br> and try to become the richest user in the <strong>WORLD!</strong><br>(In the world of Hoppi)</p>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                
             </div>
+            <div></div>
             
             <div style="display: inline-block;">
-                <p class="featureStyleTitle">Fun</p>
-                <p class="featureStyleDesc">Use commands or play games<br>using Hoppi's vast category of fun commands!</p>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <p class="featureStyleTitle"><br><br>Fun</p>
+                <p class="featureStyleDesc">Use funny commands, play games, get cool random pictures,<br> or just waste your time using Hoppi's<br> vast category of fun commands!</p>
+                
             </div>
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 0 0 25px;" src="images/rpsPlaying.png">
-            
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 25px 0 0 ;" src="images/deepfry.png">
+            <img style="display: inline-block; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 25px;" src="images/rpsPlaying.png">
+            <div></div>
+
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/deepfry.png">
             <div style="display: inline-block;">
-                <p class="featureStyleTitle">Photoshop</p>
-                <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">Edit images easily by either mentioning a user to use their profile pic,<br>or provide a link and Hoppi will use that image!<br>Hoppi only supports these image formats: <div class="code" style="display: inline;">png, jpeg, gif, bmp, tiff</div></p>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <p class="featureStyleTitle"><br><br>Photoshop</p>
+                <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">Edit images easily by either mentioning a user to use their profile pic,<br>or provide a link and Hoppi will use that image, <br> then use a specific method and you're done!<br><br>Hoppi only supports the following image formats for links: <br><span class="code">png, jpeg, gif, bmp, tiff</span><br><br>Also keep in mind that Hoppi cannot use screenshots,<br> the image must be hosted online.</p>
+                
             </div>
+            <div></div>
 
             <div style="display: inline-block;">
-                <p class="featureStyleTitle">Memes</p>
-                <p class="featureStyleDesc">Create memes using Hoppi's meme creator feature!<br>Specify the template (see templates by using <span class="code">;meme templates</span>),<br> and then your texts separated by two dashes!</p>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <p class="featureStyleTitle"><br><br><br>Memes</p>
+                <p class="featureStyleDesc">Create memes using Hoppi's meme creator feature!<br>Specify the template (see templates by using <span class="code">;meme templates</span>),<br> and then your texts separated by two dashes!<br><br>You can also use the simple <span class="code">;meme</span> to get a random meme from Reddit!</p>
+                
             </div>
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 0 0 25px;" src="images/meme.png">
-            
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 25px;" src="images/meme.png">
+            <div></div>
 
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/not stonks.jpg">
+            <div style="display: inline-block;">
+                <p class="featureStyleTitle"><br><br><br>Internet Searches</p>
+                <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">Search websites such as Reddit, Google Images,<br> the Urban Dictionary, Giphy, Wikipedia, and many more<br> for images, definitions, and gifs!</p>
+                
+            </div>
+            <div></div>
+
+            <div style="display: inline-block;">
+                <p class="featureStyleTitle"><br><br><br>Server Management</p>
+                <p class="featureStyleDesc">Hoppi makes server management easier for you with commands<br> such as purge, snipe, editsnipe, <br>and logging events that occur in your server!</p>
+                
+            </div>
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 25px ;" src="images/editsnipe.png">
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 0;" src="images/snipe.png">
+            <div></div>
+
+            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/userinfo.png">
+            <div style="display: inline-block;">
+                <p class="featureStyleTitle"><br><br><br><br><br>Info Commands</p>
+                <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">View another user's or your info by using Hoppi's userinfo command!<br>Hoppi also has commands that display your server's info,<br> such as bans, roles, role permissions, and much more!</p>
+                
+            </div>
+            <div></div>
+
+            <h3 class="featureStyleTitle">And that's just the beginning!</h3>
+            <p class="featureStyleDesc">These features are only a few out of many. Hoppi has tons more commands,<br>but you'll have to invite the bot to your server to test them all!
+                <br><br><br><span style="font-weight: 600; font-size: 20px;">If you would like to request a command, suggestion, report a bug, <br>or you have been banned from using Hoppi and would like to appeal yourself, <br>
+                    go to the form below, select the type of message you wish to send<br> from the dropdown menu, and provide some details.
+                </span></p>
             
         </div>
         <div>
+        <br><br>
+        
         
         <h1 id="feedbackHeader" style=
             "text-align: center;
@@ -109,41 +148,27 @@
             font-size: 20px;">
             Report bugs or give suggestions here!<br>Click the type of message you are sending and enter some details, then click submit!
         </p>
-        
-        <!-- <ul class="feedbackTypes">
-            <li>
-                <input id="feedback" type="checkbox" class="feedbackButton"></button>
-                <label for="feedback" class="feedbackButton">Feedback</label>
-            </li>
-            <li>
-                <input id="suggestion" type="checkbox" class="feedbackButton"></button>
-                <label for="suggestion" class="feedbackButton">Suggestion</label>
-            </li>
-            <li>
-                <input id="bug" type="checkbox" class="feedbackButton"></button>
-                <label for="bug" class="feedbackButton">Bug</label>
-            </li>
-            <li>
-                <input id="blacklistAppeal" type="checkbox" class="feedbackButton"></button>
-                <label for="blacklistAppeal" class="feedbackButton">Blacklist Appeal</label>
-            </li>
-        </ul> -->
-        
-        <!-- <textarea id="feedbackDetails" type="text" maxlength="200"
-            placeholder="Explain your message..."
-            style="background-color: skyblue;
-            border: solid 1px black; 
-            border-radius: 10px;
-            outline: none;
-            padding: 10px;
-            height: 100px;
-            width: 300px;
-            font-family: Calibri, sans-serif;
-            font-size: 15px;"></textarea> -->
         <br>
-        <iframe style="width: 500px; height: 600px;"
+        <iframe style="width: 500px; height: 650px;"
         src="https://docs.google.com/forms/d/e/1FAIpQLSfXMPPoYJLVAuiKUrmHA20QF063oP5auqG5ddRTCgvxpGYSFw/viewform"></iframe>
         </div>
+        <br><br><br><br><br>
+        <h1 id="verifyHeader" style=
+            "text-align: center;
+            display: inline-block;
+            color: white;
+            font-family: Calibri, sans-serif; 
+            font-weight: 700;
+            font-size: 40px;">Verify with Hoppi</h1>
+        <br>
+        <a class="verifyButton" target="_blank" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds">
+            Verify</a>
+        <p style=
+        "text-align: center;
+        color: #BDBDBF;
+        font-family: Calibri, sans-serif; 
+        font-size: 20px;">Your info will not be used or shared with anyone.<br><br><br></p>
+        
         <p style=
             "text-align: center; color: #BDBDBF; font-family: Calibri, sans-serif; font-size: 18px; font-style: italic;">
             Hoppi is still in development!<br>Please report bugs and give feedback above
