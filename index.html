@@ -11,6 +11,8 @@
             <li><a href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" target="_blank" class="navigation">Invite</a></li>
             <li><a href="https://discord.gg/bVJtZpZ" class="navigation" target="_blank">Support Server</a></li>
             <li><a href="https://hoppi-discord.gitbook.io/hoppi-docs/" class="navigation" target="_blank">Docs</a></li>
+            <li><a href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds" class="navigation" target="_blank">Verify</a></li>
+            <li><a href="https://github.com/hoppibot/hoppi" class="navigation" target="_blank">Github</a></li>
         </ul>
     </head>
     <meta data-react-helmet="true" name="viewport" 
@@ -45,9 +47,7 @@
             <a class="inviteButton" title="Add Hoppi to your server" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" 
             target="_blank">Add to Server</a><br><br><br>
             <a class="featureButton" title="See Hoppi's features" onclick="scrollToFeatures()">Features</a>
-            <a class="feedbackScrollButton" title="Give feedback to Hoppi" onclick="scrollToFeedback()">Feedback</a>
-            <a class="verifyScrollButton" title="Verify with Hoppi" target="_blank" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds">Verify</a>
-            <a class="supportScrollButton" title="Our support server" href="https://discord.gg/bVJtZpZ" target="_blank">Server</a>
+            <a class="feedbackScrollButton" title="Give feedback to Hoppi" onclick="scrollToFeedback()"><span style="font-size: 18px;">Feedback</span></a>
             <a class="linkScrollButton" title="Links related to Hoppi" onclick="scrollToLinks()">Links</a>
             <br><br><br><br><br><br>
             <h2 style="text-align: center;
@@ -60,21 +60,21 @@
             font-style: italic;
             font-family: Calibri, sans-serif; 
             font-size: 20px;">You can give feedback, suggestions, report bugs, hang out, or just talk with other users!<br>We welcome all members that follow our community rules.</p>
-            <iframe id="supportWidget" src="https://discordapp.com/widget?id=733727076464459906&theme=dark" width="350" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            <iframe style="border-radius: 25px 25px 0 25px;" id="supportWidget" src="https://discordapp.com/widget?id=733727076464459906&theme=dark" width="350" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </div>
         <div>
             <br><br><br>
             <h2 class="features" id="featuresHeader">𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</h2>
             <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 25px 50px 0;" src="images/leaderboard.png">
             <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br>Currency</p>
+                <p class="featureStyleTitle"><br>💰 Currency</p>
                 <p class="featureStyleDesc">Earn currency by gambling, begging, or getting it for free,<br> and try to become the richest user in the <strong>WORLD!</strong><br>(In the world of Hoppi)</p>
                 
             </div>
             <div></div>
             
             <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br>Fun</p>
+                <p class="featureStyleTitle"><br><br>🎉 Fun</p>
                 <p class="featureStyleDesc">Use funny commands, play games, get cool random pictures,<br> or just waste your time using Hoppi's<br> vast category of fun commands!</p>
                 
             </div>
@@ -83,14 +83,14 @@
 
             <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/deepfry.png">
             <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br>Photoshop</p>
+                <p class="featureStyleTitle"><br><br>📷 Photoshop</p>
                 <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">Edit images easily by either mentioning a user to use their profile pic,<br>or provide a link and Hoppi will use that image, <br> then use a specific method and you're done!<br><br>Hoppi only supports the following image formats for links: <br><span class="code">png, jpeg, gif, bmp, tiff</span><br><br>Also keep in mind that Hoppi cannot use screenshots,<br> the image must be hosted online.</p>
                 
             </div>
             <div></div>
 
             <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br><br>Memes</p>
+                <p class="featureStyleTitle"><br><br><br>🤣 Memes</p>
                 <p class="featureStyleDesc">Create memes using Hoppi's meme creator feature!<br>Specify the template (see templates by using <span class="code">;meme templates</span>),<br> and then your texts separated by two dashes!<br><br>You can also use the simple <span class="code">;meme</span> to get a random meme from Reddit!</p>
                 
             </div>
@@ -99,14 +99,14 @@
 
             <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/not stonks.jpg">
             <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br><br>Internet Searches</p>
+                <p class="featureStyleTitle"><br><br><br>🔎 Internet Searches</p>
                 <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">Search websites such as Reddit, Google Images,<br> the Urban Dictionary, Giphy, Wikipedia, and many more<br> for images, definitions, and gifs!</p>
                 
             </div>
             <div></div>
 
             <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br><br>Server Management</p>
+                <p class="featureStyleTitle"><br><br><br>👮 Server Management</p>
                 <p class="featureStyleDesc">Hoppi makes server management easier for you with commands<br> such as purge, snipe, editsnipe, <br>and logging events that occur in your server!</p>
                 
             </div>
@@ -116,7 +116,7 @@
 
             <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/userinfo.png">
             <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br><br><br><br>Info Commands</p>
+                <p class="featureStyleTitle"><br><br><br><br><br>📚 Info Commands</p>
                 <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">View another user's or your info by using Hoppi's userinfo command!<br>Hoppi also has commands that display your server's info,<br> such as bans, roles, role permissions, and much more!</p>
                 
             </div>
@@ -139,7 +139,7 @@
             color: white;
             font-family: Calibri, sans-serif; 
             font-weight: 700;
-            font-size: 40px;">Feedback</h1>
+            font-size: 40px;">📖 Feedback</h1>
         <p style=
             "text-align: center;
             color: #BDBDBF;
@@ -149,7 +149,7 @@
             Report bugs or give suggestions here!<br>Click the type of message you are sending and enter some details, then click submit!
         </p>
         <br>
-        <iframe style="width: 500px; height: 650px;"
+        <iframe style="width: 500px; height: 500px; border-radius: 25px; "
         src="https://docs.google.com/forms/d/e/1FAIpQLSfXMPPoYJLVAuiKUrmHA20QF063oP5auqG5ddRTCgvxpGYSFw/viewform"></iframe>
         </div>
         <br><br><br><br><br>
@@ -159,7 +159,7 @@
             color: white;
             font-family: Calibri, sans-serif; 
             font-weight: 700;
-            font-size: 40px;"><img style="cursor: default;" height="75px" width="auto" src="images/verify.png"><span style="position: relative; bottom: 20px;">Verify with Hoppi</span><br><span class="featureStyleDesc">Clicking this button will make Hoppi request access to your username, avatar, and servers.</span></h1>
+            font-size: 40px;"><img style="cursor: default;" height="75px" width="auto" src="images/verify.png"><span style="position: relative; bottom: 20px;">Verify with Hoppi</span><br><span class="featureStyleDesc">Clicking this button will request access to your username, avatar, and servers.</span></h1>
         <br>
         <a class="verifyButton" target="_blank" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds">
             Verify</a>
@@ -167,7 +167,7 @@
         "text-align: center;
         color: #BDBDBF;
         font-family: Calibri, sans-serif; 
-        font-size: 20px;"><br>Your info will not be used or shared with anyone.<br><br><br><br><br></p>
+        font-size: 20px;"><br>Your info will not be used or shared with anyone.</p>
 
         <h1 id="linksHeader" style="text-align: center;
         display: inline-block;
@@ -176,7 +176,7 @@
         font-weight: 700;
         font-size: 40px;
         position: relative;
-        top: 20px;">Links</h1>
+        top: 20px;"><img src="images/link.png" style="cursor: default; height: 120px; width: auto; position: relative; top: 40px; right: 30px;"><span style="position: relative; right: 40px;">Links</span></h1>
         <p style="text-align: center;
         color: #BDBDBF;
         font-family: Calibri, sans-serif; 
@@ -200,7 +200,7 @@
         feedback.innerHTML = 'Feedback'
         docs.innerHTML = 'Docs'
         server.innerHTML = 'Server'
-        github.innerHTML = 'Github'
+        github.innerHTML = 'Github Repo'
 
         navigator.clipboard.writeText(invite.getAttribute('value'))
         invite.style.background = '#09e809'
@@ -228,7 +228,7 @@
             verify.innerHTML = 'Verify'
             feedback.innerHTML = 'Feedback'
             docs.innerHTML = 'Docs'
-            github.innerHTML = 'Github'
+            github.innerHTML = 'Github Repo'
             invite.innerHTML = 'Invite'
 
             navigator.clipboard.writeText(support.getAttribute('value'))
@@ -254,7 +254,7 @@
         server.style.background = '#131B21'
         invite.style.background = '#131B21'
 
-        github.innerHTML = 'Github'
+        github.innerHTML = 'Github Repo'
         feedback.innerHTML = 'Feedback'
         docs.innerHTML = 'Docs'
         server.innerHTML = 'Server'
@@ -286,7 +286,7 @@
 
         verify.innerHTML = 'Verify'
         feedback.innerHTML = 'Feedback'
-        github.innerHTML = 'Github'
+        github.innerHTML = 'Github Repo'
         server.innerHTML = 'Server'
         invite.innerHTML = 'Invite'
 
@@ -314,7 +314,7 @@
         invite.style.background = '#131B21'
 
         verify.innerHTML = 'Verify'
-        github.innerHTML = 'Github'
+        github.innerHTML = 'Github Repo'
         docs.innerHTML = 'Docs'
         server.innerHTML = 'Server'
         invite.innerHTML = 'Invite'
@@ -353,11 +353,11 @@
         github.innerHTML = 'Copied!'
         setTimeout(function() {
             github.style.background = '#131B21'
-            github.innerHTML = 'Github'
+            github.innerHTML = 'Github Repo'
         }, 1250)
-        ">Github</a>
+        ">Github Repo</a>
         
-        <br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
         
         <p style=
             "text-align: center; color: #BDBDBF; font-family: Calibri, sans-serif; font-size: 18px; font-style: italic;">
