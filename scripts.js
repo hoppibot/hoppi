@@ -12,3 +12,8 @@ function scrollToVerify() {
     features = document.getElementById('verifyHeader')
     features.scrollIntoView()
 }
+
+function scrollToLinks() {
+    features = document.getElementById('linksHeader')
+    features.scrollIntoView()
+}
