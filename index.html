@@ -6,9 +6,8 @@
         <link rel="shortcut icon" type="image/x-icon" href="images/logo.jpg">
         <title>Hoppi - Discord Bot</title>
 
-    <!-- <img src = "images/logo.jpg" class = "logo"> -->
         <ul class="navigationButtons">
-            <li><a href="index.html" class="navigationMain">ʜᴏᴘᴘɪ</li>
+            <li><a href="https://hoppibot.github.io/hoppi" class="navigationMain">ʜᴏᴘᴘɪ</li>
             <li><a href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" target="_blank" class="navigation">Invite</a></li>
             <li><a href="https://discord.gg/bVJtZpZ" class="navigation" target="_blank">Support Server</a></li>
             <li><a href="https://hoppi-discord.gitbook.io/hoppi-docs/" class="navigation" target="_blank">Docs</a></li>
@@ -47,8 +46,9 @@
             target="_blank">Add to Server</a><br><br><br>
             <a class="featureButton" title="See Hoppi's features" onclick="scrollToFeatures()">Features</a>
             <a class="feedbackScrollButton" title="Give feedback to Hoppi" onclick="scrollToFeedback()">Feedback</a>
-            <a class="verifyScrollButton" title="Verify with Hoppi" onclick="scrollToVerify()">Verify</a>
+            <a class="verifyScrollButton" title="Verify with Hoppi" target="_blank" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds">Verify</a>
             <a class="supportScrollButton" title="Our support server" href="https://discord.gg/bVJtZpZ" target="_blank">Server</a>
+            <a class="linkScrollButton" title="Links related to Hoppi" onclick="scrollToLinks()">Links</a>
             <br><br><br><br><br><br>
             <h2 style="text-align: center;
             color: white;
@@ -159,7 +159,7 @@
             color: white;
             font-family: Calibri, sans-serif; 
             font-weight: 700;
-            font-size: 40px;">Verify with Hoppi</h1>
+            font-size: 40px;"><img style="cursor: default;" height="75px" width="auto" src="images/verify.png"><span style="position: relative; bottom: 20px;">Verify with Hoppi</span><br><span class="featureStyleDesc">Clicking this button will make Hoppi request access to your username, avatar, and servers.</span></h1>
         <br>
         <a class="verifyButton" target="_blank" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds">
             Verify</a>
@@ -167,7 +167,197 @@
         "text-align: center;
         color: #BDBDBF;
         font-family: Calibri, sans-serif; 
-        font-size: 20px;">Your info will not be used or shared with anyone.<br><br><br></p>
+        font-size: 20px;"><br>Your info will not be used or shared with anyone.<br><br><br><br><br></p>
+
+        <h1 id="linksHeader" style="text-align: center;
+        display: inline-block;
+        color: white;
+        font-family: Calibri, sans-serif; 
+        font-weight: 700;
+        font-size: 40px;
+        position: relative;
+        top: 20px;">Links</h1>
+        <p style="text-align: center;
+        color: #BDBDBF;
+        font-family: Calibri, sans-serif; 
+        font-size: 20px;">Important links related to Hoppi, click to copy.</p>
+        <a class="linkButton" id="inviteLink" value="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" onclick="
+        let invite = document.getElementById('inviteLink')
+
+        let verify = document.getElementById('verifyLink')
+        let feedback = document.getElementById('formLink')
+        let docs = document.getElementById('docsLink')
+        let server = document.getElementById('supportLink')
+        let github = document.getElementById('githubLink')
+
+        verify.style.background = '#131B21'
+        feedback.style.background = '#131B21'
+        docs.style.background = '#131B21'
+        server.style.background = '#131B21'
+        github.style.background = '#131B21'
+
+        verify.innerHTML = 'Verify'
+        feedback.innerHTML = 'Feedback'
+        docs.innerHTML = 'Docs'
+        server.innerHTML = 'Server'
+        github.innerHTML = 'Github'
+
+        navigator.clipboard.writeText(invite.getAttribute('value'))
+        invite.style.background = '#09e809'
+        invite.innerHTML = 'Copied!'
+        setTimeout(function() {
+            invite.style.background = '#131B21'
+            invite.innerHTML = 'Invite'
+        }, 1250)
+        ">Invite</a>
+        <a class="linkButton" id="supportLink" value="https://discord.bVJtZpZ" onclick="
+            let support = document.getElementById('supportLink')
+
+            let verify = document.getElementById('verifyLink')
+            let feedback = document.getElementById('formLink')
+            let docs = document.getElementById('docsLink')
+            let github = document.getElementById('githubLink')
+            let invite = document.getElementById('inviteLink')
+
+            verify.style.background = '#131B21'
+            feedback.style.background = '#131B21'
+            docs.style.background = '#131B21'
+            github.style.background = '#131B21'
+            invite.style.background = '#131B21'
+
+            verify.innerHTML = 'Verify'
+            feedback.innerHTML = 'Feedback'
+            docs.innerHTML = 'Docs'
+            github.innerHTML = 'Github'
+            invite.innerHTML = 'Invite'
+
+            navigator.clipboard.writeText(support.getAttribute('value'))
+            support.style.background = '#09e809'
+            support.innerHTML = 'Copied!'
+            setTimeout(function() {
+                support.style.background = '#131B21'
+                support.innerHTML = 'Server'
+            }, 1250)
+        ">Server</a>
+        <a class="linkButton" id="verifyLink" value="https://discord.com/login?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D729803338228695060%26redirect_uri%3Dhttps%253A%252F%252Fdiscord.com%252Foauth2%252Fauthorized%26response_type%3Dcode%26scope%3Didentify%2520guilds" onclick="
+        let verify = document.getElementById('verifyLink')
+
+        let github = document.getElementById('githubLink')
+        let feedback = document.getElementById('formLink')
+        let docs = document.getElementById('docsLink')
+        let server = document.getElementById('supportLink')
+        let invite = document.getElementById('inviteLink')
+
+        github.style.background = '#131B21'
+        feedback.style.background = '#131B21'
+        docs.style.background = '#131B21'
+        server.style.background = '#131B21'
+        invite.style.background = '#131B21'
+
+        github.innerHTML = 'Github'
+        feedback.innerHTML = 'Feedback'
+        docs.innerHTML = 'Docs'
+        server.innerHTML = 'Server'
+        invite.innerHTML = 'Invite'
+
+        navigator.clipboard.writeText(verify.getAttribute('value'))
+        verify.style.background = '#09e809'
+        verify.innerHTML = 'Copied!'
+        setTimeout(function() {
+            verify.style.background = '#131B21'
+            verify.innerHTML = 'Verify'
+        }, 1250)
+        ">Verify</a>
+        <br><br>
+        <a class="linkButton" id="docsLink" value="https://hoppi-discord.gitbook.io/hoppi-docs/" onclick="
+        let docs = document.getElementById('docsLink')
+
+        let verify = document.getElementById('verifyLink')
+        let feedback = document.getElementById('formLink')
+        let github = document.getElementById('githubLink')
+        let server = document.getElementById('supportLink')
+        let invite = document.getElementById('inviteLink')
+
+        verify.style.background = '#131B21'
+        feedback.style.background = '#131B21'
+        github.style.background = '#131B21'
+        server.style.background = '#131B21'
+        invite.style.background = '#131B21'
+
+        verify.innerHTML = 'Verify'
+        feedback.innerHTML = 'Feedback'
+        github.innerHTML = 'Github'
+        server.innerHTML = 'Server'
+        invite.innerHTML = 'Invite'
+
+        navigator.clipboard.writeText(docs.getAttribute('value'))
+        docs.style.background = '#09e809'
+        docs.innerHTML = 'Copied!'
+        setTimeout(function() {
+            docs.style.background = '#131B21'
+            docs.innerHTML = 'Docs'
+        }, 1250)
+        ">Docs</a>
+        <a class="linkButton" id="formLink" value="https://docs.google.com/forms/d/e/1FAIpQLSfXMPPoYJLVAuiKUrmHA20QF063oP5auqG5ddRTCgvxpGYSFw/viewform" onclick="
+        let feedback = document.getElementById('formLink')
+
+        let verify = document.getElementById('verifyLink')
+        let github = document.getElementById('githubLink')
+        let docs = document.getElementById('docsLink')
+        let server = document.getElementById('supportLink')
+        let invite = document.getElementById('inviteLink')
+
+        verify.style.background = '#131B21'
+        github.style.background = '#131B21'
+        docs.style.background = '#131B21'
+        server.style.background = '#131B21'
+        invite.style.background = '#131B21'
+
+        verify.innerHTML = 'Verify'
+        github.innerHTML = 'Github'
+        docs.innerHTML = 'Docs'
+        server.innerHTML = 'Server'
+        invite.innerHTML = 'Invite'
+
+        navigator.clipboard.writeText(feedback.getAttribute('value'))
+        feedback.style.background = '#09e809'
+        feedback.innerHTML = 'Copied!'
+        setTimeout(function() {
+            feedback.style.background = '#131B21'
+            feedback.innerHTML = 'Feedback'
+        }, 1250)
+        ">Feedback</a>
+        <a class="linkButton" id="githubLink" value="https://github.io/hoppibot" onclick="
+        let github = document.getElementById('githubLink')
+
+        let verify = document.getElementById('verifyLink')
+        let feedback = document.getElementById('formLink')
+        let docs = document.getElementById('docsLink')
+        let server = document.getElementById('supportLink')
+        let invite = document.getElementById('inviteLink')
+
+        verify.style.background = '#131B21'
+        feedback.style.background = '#131B21'
+        docs.style.background = '#131B21'
+        server.style.background = '#131B21'
+        invite.style.background = '#131B21'
+
+        verify.innerHTML = 'Verify'
+        feedback.innerHTML = 'Feedback'
+        docs.innerHTML = 'Docs'
+        server.innerHTML = 'Server'
+        invite.innerHTML = 'Invite'
+
+        navigator.clipboard.writeText(github.getAttribute('value'))
+        github.style.background = '#09e809'
+        github.innerHTML = 'Copied!'
+        setTimeout(function() {
+            github.style.background = '#131B21'
+            github.innerHTML = 'Github'
+        }, 1250)
+        ">Github</a>
+        
+        <br><br><br><br><br>
         
         <p style=
             "text-align: center; color: #BDBDBF; font-family: Calibri, sans-serif; font-size: 18px; font-style: italic;">
