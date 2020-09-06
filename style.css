@@ -5,6 +5,7 @@ html {
 body {
 	background-color: #131B21;
 	text-align: center;
+	/* cursor: url('images/cursor.png'), pointer; */
 }
 
 p {
@@ -15,7 +16,9 @@ p {
 	font-size: 18px;
 	font-family: 'Courier New', monospace;
 	color: #BDBDBF;
-	background-color: #21201f;
+	background-color: black;
+	padding: 3px;
+	border-radius: 8px;
 }
 
 .logo {
