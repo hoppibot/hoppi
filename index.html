@@ -6,7 +6,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="images/logo.jpg">
         <title>Hoppi - the Discord Bot</title>
 
-        <ul class="navigationButtons">
+        <ul id="topNavigation" class="navigationButtons">
             <li><a href="index.html" class="navigationMain">ʜᴏᴘᴘɪ</li>
             <li><a href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" target="_blank" class="navigation">Invite</a></li>
             <li><a href="https://discord.gg/bVJtZpZ" class="navigation" target="_blank">Support Server</a></li>
@@ -65,6 +65,37 @@
             font-size: 20px;">You can give feedback, suggestions, report bugs, hang out, or just talk with other users!<br>We welcome all members that follow our community rules.</p>
             <iframe style="border-radius: 25px 25px 0 25px;" id="supportWidget" src="https://discordapp.com/widget?id=733727076464459906&theme=dark" width="350" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </div>
+        
+        <br><br><br>
+
+        <div onclick="
+            let top = document.getElementById('topNavigation')
+            top.scrollIntoView()
+        " 
+        style="
+        float: right; 
+        font-family: Calibri, sans-serif; 
+        color: #BDBDBF;
+        font-size: 20px;
+        margin: 0 10px 0 0;
+        width: 70px;
+        padding: 10px 20px 20px 20px;
+        border: 2px;
+        border-radius: 25px;
+        border-color: black;
+        background-color: black;
+        cursor: pointer;
+        top: 0;
+        position: sticky;
+        z-index: 3000;
+        "><img src="images/mouse.png" style="
+        height: 30px; 
+        width: auto;
+        position: relative;
+        top: 8px;
+        cursor: pointer;"><br>Scroll to Top</div>
+        <br>
+        <!--Features-->
         <div>
             <br><br><br>
             <h2 class="features" id="featuresHeader">𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</h2>
