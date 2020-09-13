@@ -1,19 +1,34 @@
 <!doctype html>
 <html>
-    <script type="text/javascript" src="scripts.js"></script>
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css" >
+        <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="shortcut icon" type="image/x-icon" href="images/logo.jpg">
+        <script type="text/javascript" src="scripts.js"></script>
+
         <title>Hoppi - the Discord Bot</title>
 
         <ul id="topNavigation" class="navigationButtons">
-            <li><a href="index.html" class="navigationMain">ʜᴏᴘᴘɪ</li>
+            <li><a href="index.html" class="navigationMain" id="navigationMain">ʜᴏᴘᴘɪ</li>
             <li><a href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" target="_blank" class="navigation">Invite</a></li>
             <li><a href="https://discord.gg/bVJtZpZ" class="navigation" target="_blank">Support Server</a></li>
-            <li><a href="https://hoppi-discord.gitbook.io/hoppi-docs/" class="navigation" target="_blank">Docs</a></li>
-            <li><a href="more/devs.html" class="navigation">Creators</a></li>
-            <li><a href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds" class="navigation" target="_blank">Verify</a></li>
-            <li><a href="https://github.com/hoppibot/hoppi" class="navigation" target="_blank">Github</a></li>
+            <!-- <li><a href="https://hoppi-discord.gitbook.io/hoppi-docs/" class="navigation" target="_blank">Docs</a></li> -->
+            <!-- <li><a href="more/devs.html" class="navigation">Creators</a></li> -->
+            <!-- <li><a href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds" class="navigation" target="_blank">Verify</a></li> -->
+            <!-- <li><a href="https://github.com/hoppibot/hoppi" class="navigation" target="_blank">Github</a></li> -->
+            <li class="navigation">  
+             <ul id="navigation">
+                  <ul>
+                  </ul>
+                </li>
+                <li><a href="" style="white-space: pre-wrap;">More  <img src="images/dropdown.png" style="height: 10px; width: auto; vertical-align: auto; cursor: pointer;"></a>
+                  <ul>
+                    <li class=""> <a target="_blank" href="https://hoppi-discord.gitbook.io/hoppi-docs/">Docs</a> </li>
+                    <li class=""> <a target="_blank" href="https://github.com/hoppibot/hoppi">Github</a> </li>
+                    <li class=""> <a href="more/devs.html">Creators</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
         </ul>
     </head>
     <meta data-react-helmet="true" name="viewport" 
@@ -28,11 +43,11 @@
     <meta data-react-helmet="true" property="og:title" content="Hoppi - the Discord Bot"/>
     <meta data-react-helmet="true" property="og:description" content="The official Hoppi website!"/>
 
-    <body>
+    <body id="body">
         
         <div>
             <br><br><br><br><br>
-            <img title="Hoppi Logo" class="logo" src="images/logo.jpg" onclick="window.open('images/logo.jpg', '_blank')">
+            <img class="logo" src="images/logo.jpg" onclick="window.open('images/logo.jpg', '_blank')">
             <br><br><br>
             <h1 class="title"> Make an awesome Discord server with Hoppi!
             </h1>
@@ -43,58 +58,55 @@
                 font-family: Calibri, sans-serif; 
                 font-size: 20px;">
                 Games, currency, photoshop, memes, and much more!
-                <span style="font-style: normal; font-weight: 600; color: white;"><br><br>Bot Prefix: <span style="color: #131B21; user-select: none;">aa</span><span style="font-size: 30px;">;</span></span><br><br>(a semi-colon, eg. <span class="code">;help</span>)
             </p>
             <br>
-            <a class="inviteButton" title="Add Hoppi to your server" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" 
-            target="_blank">Add to Server</a><br><br><br>
-            <a class="featureButton" title="See Hoppi's features" onclick="scrollToFeatures()">Features</a>
-            <a class="feedbackScrollButton" title="Give feedback to Hoppi" onclick="scrollToFeedback()"><span style="font-size: 18px;">Feedback</span></a>
+            <div class="hvr-bob"><div class="hvr-grow"><a class="inviteButton" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" 
+            target="_blank" id="inviteButton">Add to Server</a></div></div><br><br><br>
+            <div class="hvr-bob"><div class="hvr-grow"><a class="featureButton" onclick="scrollToFeatures()">Features</a></div></div>
+            <div class="hvr-bob"><div class="hvr-grow"><a class="feedbackScrollButton" onclick="scrollToFeedback()"><span style="font-size: 18px;">Feedback</span></a></div></div>
             <!-- <a class="verifyScrollButton" title="Verify with Hoppi" target="_blank" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds">Verify</a> -->
-            <a class="linkScrollButton" title="Links related to Hoppi" onclick="scrollToLinks()">Links</a>
-            <br><br><br><br><br><br>
+            <div class="hvr-bob"><div class="hvr-grow"><a class="linkScrollButton" onclick="scrollToLinks()">Links</a></div></div>
+            <br>
+            <p >
+            <p style=
+            "text-align: center;
+            color: #BDBDBF;
+            font-style: italic;
+            font-family: Calibri, sans-serif; 
+            font-size: 20px;">
+            <span style="font-style: normal; font-weight: 600; color: white; white-space: pre-wrap;"><br><br>Bot Prefix:   <span style="font-size: 30px;">;</span></span><br><br>(a semi-colon, eg. <span class="code">;help</span>)
+            </p>
+            <br><br><br>
             <h2 style="text-align: center;
             color: white;
             font-family: Calibri, sans-serif; 
-            font-weight: 700;">If you like Hoppi, consider joining our Support server!</h2>
+            font-weight: 700;">Join our Support Server!</h2>
             <p style=
             "text-align: center;
             color: #BDBDBF;
             font-style: italic;
             font-family: Calibri, sans-serif; 
             font-size: 20px;">You can give feedback, suggestions, report bugs, hang out, or just talk with other users!<br>We welcome all members that follow our community rules.</p>
+            <br><br>
+            <div class="hvr-bob"><div class="hvr-grow"><a class="inviteButton" target="_blank" href="https://discord.gg/bVJtZpZ">Support Server</a></div></div>
+            <br><br><br><br>
             <iframe style="border-radius: 25px 25px 0 25px;" id="supportWidget" src="https://discordapp.com/widget?id=733727076464459906&theme=dark" width="350" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            <br>
         </div>
         
         <br><br><br>
 
-        <div onclick="
+        <div class="scrolltotop" onclick="
             let top = document.getElementById('topNavigation')
             top.scrollIntoView()
-        " 
-        style="
-        float: right; 
-        font-family: Calibri, sans-serif; 
-        color: #BDBDBF;
-        font-size: 20px;
-        margin: 0 10px 0 0;
-        width: 70px;
-        padding: 10px 20px 20px 20px;
-        border: 2px;
-        border-radius: 25px;
-        border-color: black;
-        background-color: black;
-        cursor: pointer;
-        top: 0;
-        position: sticky;
-        z-index: 3000;
         "><img src="images/mouse.png" style="
         height: 30px; 
         width: auto;
         position: relative;
         top: 8px;
-        cursor: pointer;"><br>Scroll to Top</div>
-        <br>
+        cursor: pointer;
+        "><br>Scroll to Top</div>
+        <br><br><br>
         <!--Features-->
         <div>
             <br><br><br>
@@ -158,9 +170,7 @@
 
             <h3 class="featureStyleTitle">And that's just the beginning!</h3>
             <p class="featureStyleDesc">These features are only a few out of many. Hoppi has tons more commands,<br>but you'll have to invite the bot to your server to test them all!
-                <br><br><br><span style="font-weight: 600; font-size: 20px;">If you would like to request a command, suggestion, report a bug, <br>or you have been banned from using Hoppi and would like to appeal yourself, <br>
-                    go to the form below, select the type of message you wish to send<br> from the dropdown menu, and provide some details.
-                </span></p>
+                <br><br><br></p>
             
         </div>
         <div>
@@ -193,10 +203,13 @@
             color: white;
             font-family: Calibri, sans-serif; 
             font-weight: 700;
-            font-size: 40px;"><img style="cursor: default;" height="75px" width="auto" src="images/verify.png"><span style="position: relative; bottom: 20px;">Verify with Hoppi</span><br><span class="featureStyleDesc">Clicking this button will request access to your username, avatar, and servers.</span></h1>
+            font-size: 40px;">
+            <img style="cursor: default;" height="75px" width="auto" src="images/verify.png">
+            <span style="position: relative; bottom: 20px;">Verify with Hoppi</span><br>
+            <span class="featureStyleDesc">Clicking this button will request access to your username, avatar, and servers.</span></h1>
         <br>
-        <a class="verifyButton" target="_blank" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds">
-            Verify</a>
+        <div class="hvr-bob"><div class="hvr-grow"><a class="verifyButton" target="_blank" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds">
+            Verify</a></div></div>
         <p style=
         "text-align: center;
         color: #BDBDBF;
@@ -215,7 +228,7 @@
         color: #BDBDBF;
         font-family: Calibri, sans-serif; 
         font-size: 20px;">Important links related to Hoppi, click to copy.</p>
-        <a class="linkButton" id="inviteLink" value="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" onclick="
+        <div class="hvr-bob"><a class="linkButton" id="inviteLink" value="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" onclick="
         let invite = document.getElementById('inviteLink')
 
         let verify = document.getElementById('verifyLink')
@@ -243,8 +256,8 @@
             invite.style.background = '#131B21'
             invite.innerHTML = 'Invite'
         }, 1250)
-        ">Invite</a>
-        <a class="linkButton" id="supportLink" value="https://discord.bVJtZpZ" onclick="
+        ">Invite</a></div>
+        <div class="hvr-bob"><a class="linkButton" id="supportLink" value="https://discord.bVJtZpZ" onclick="
             let support = document.getElementById('supportLink')
 
             let verify = document.getElementById('verifyLink')
@@ -272,8 +285,8 @@
                 support.style.background = '#131B21'
                 support.innerHTML = 'Server'
             }, 1250)
-        ">Server</a>
-        <a class="linkButton" id="verifyLink" value="https://discord.com/login?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D729803338228695060%26redirect_uri%3Dhttps%253A%252F%252Fdiscord.com%252Foauth2%252Fauthorized%26response_type%3Dcode%26scope%3Didentify%2520guilds" onclick="
+        ">Server</a></div>
+        <div class="hvr-bob"><a class="linkButton" id="verifyLink" value="https://discord.com/login?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D729803338228695060%26redirect_uri%3Dhttps%253A%252F%252Fdiscord.com%252Foauth2%252Fauthorized%26response_type%3Dcode%26scope%3Didentify%2520guilds" onclick="
         let verify = document.getElementById('verifyLink')
 
         let github = document.getElementById('githubLink')
@@ -301,9 +314,9 @@
             verify.style.background = '#131B21'
             verify.innerHTML = 'Verify'
         }, 1250)
-        ">Verify</a>
+        ">Verify</a></div>
         <br><br>
-        <a class="linkButton" id="docsLink" value="https://hoppi-discord.gitbook.io/hoppi-docs/" onclick="
+        <div class="hvr-bob"><a class="linkButton" id="docsLink" value="https://hoppi-discord.gitbook.io/hoppi-docs/" onclick="
         let docs = document.getElementById('docsLink')
 
         let verify = document.getElementById('verifyLink')
@@ -331,8 +344,8 @@
             docs.style.background = '#131B21'
             docs.innerHTML = 'Docs'
         }, 1250)
-        ">Docs</a>
-        <a class="linkButton" id="formLink" value="https://docs.google.com/forms/d/e/1FAIpQLSfXMPPoYJLVAuiKUrmHA20QF063oP5auqG5ddRTCgvxpGYSFw/viewform" onclick="
+        ">Docs</a></div>
+        <div class="hvr-bob"><a class="linkButton" id="formLink" value="https://docs.google.com/forms/d/e/1FAIpQLSfXMPPoYJLVAuiKUrmHA20QF063oP5auqG5ddRTCgvxpGYSFw/viewform" onclick="
         let feedback = document.getElementById('formLink')
 
         let verify = document.getElementById('verifyLink')
@@ -360,8 +373,8 @@
             feedback.style.background = '#131B21'
             feedback.innerHTML = 'Feedback'
         }, 1250)
-        ">Feedback</a>
-        <a class="linkButton" id="githubLink" value="https://github.io/hoppibot" onclick="
+        ">Feedback</a></div>
+        <div class="hvr-bob"><a class="linkButton" id="githubLink" value="https://github.io/hoppibot" onclick="
         let github = document.getElementById('githubLink')
 
         let verify = document.getElementById('verifyLink')
@@ -389,34 +402,41 @@
             github.style.background = '#131B21'
             github.innerHTML = 'Github Repo'
         }, 1250)
-        ">Github Repo</a>
+        ">Github Repo</a></div>
         
         <br><br><br><br><br><br><br><br><br><br><br>
-        <footer>
-            <a href="more/devs.html" style="
-                text-decoration: none;
-                color: gold;
-                font-family: Calibri, sans-serif;
-                font-size: 30px;
-                text-align: center;
-            ">Creators <span style="font-size: 25px;">→</span></a>
-        </footer>
+        <div class="hvr-forward">
+            <footer>
+                <a href="more/devs.html" style="
+                    text-decoration: none;
+                    color: gold;
+                    font-family: Calibri, sans-serif;
+                    font-size: 30px;
+                    text-align: center;
+                ">Creators <span style="font-size: 25px;">→</span></a>
+            </footer>
+        </div>
 
         <br><br><br><br><br>
-
+        <p id="light" hidden>Light Mode</p>
+        <p class="featureStyleDesc">Light Mode</p>
+        <label class="switch">
+            <input onclick="darkmodeOnClick()" type="checkbox">
+            <span class="slider round"></span>
+        </label>
         
             
         
     </body>
-    <p style=
-            "position: relative; top: 28px; background-color: #000000; padding: 50px;text-align: center; color: #BDBDBF; font-family: Calibri, sans-serif; font-size: 18px; font-style: italic;">
+    <footer style=
+            "position: relative; top: 28px; background-color: #000000; padding: 50px;text-align: center; color: #BDBDBF; font-family: Calibri, sans-serif; font-size: 18px; font-style: italic; font-weight: 500;">
             Hoppi is still in development!<br>Please report bugs and give feedback above
             or in our official <a style="color: skyblue; text-decoration: none;" href="https://discord.gg/bVJtZpZ" target="_blank">support server!</a>
             <br><br><span style="font-style: normal;">This website created from scratch by <a href="more/devs.html" style="color: #BDBDBF; text-decoration-color: skyblue; color: skyblue;">p0tato#5991</a>.
             <br>Thanks to <a style="color: #BDBDBF; text-decoration-color: skyblue; color: skyblue;" target="_blank" href="https://pages.github.com">Github</a> for hosting this website.
             </span><br><br><span style="font-size: 15px; font-style: normal; color: #aaaaad;">Copyright © 2020 Hoppi Inc</span>
             <br><br><img title="Hoppi's logo" style="border-radius: 50px; height: 75px; width: auto; cursor: pointer;" onclick="window.open('images/logo.jpg')" src="images/logo.jpg">
-    </p>
+    </footer>
 </html>
 
 
