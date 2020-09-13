@@ -2,17 +2,28 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../style.css" >
-        <link rel="shortcut icon" type="image/x-icon" href="images/logo.jpg">
+        <link rel="shortcut icon" type="image/x-icon" href="../images/logo.jpg">
         <title>Hoppi - the Discord Bot</title>
+        <script type="text/javascript" src="../scripts.js"></script>
 
         <ul class="navigationButtons">
             <li><a href="../index.html" class="navigationMain">ʜᴏᴘᴘɪ</li>
             <li><a href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" target="_blank" class="navigation">Invite</a></li>
             <li><a href="https://discord.gg/bVJtZpZ" class="navigation" target="_blank">Support Server</a></li>
-            <li><a href="https://hoppi-discord.gitbook.io/hoppi-docs/" class="navigation" target="_blank">Docs</a></li>
-            <li><a href="devs.html" class="navigation">Creators</a></li>
-            <li><a href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds" class="navigation" target="_blank">Verify</a></li>
-            <li><a href="https://github.com/hoppibot/hoppi" class="navigation" target="_blank">Github</a></li>
+            <li class="navigation">  
+                <ul id="navigation">
+                     <ul>
+                     </ul>
+                   </li>
+                   <li><a href="" style="white-space: pre-wrap;">More  <img src="../images/dropdown.png" style="height: 10px; width: auto; vertical-align: auto; cursor: pointer;"></a>
+                     <ul>
+                       <li class=""> <a target="_blank" href="https://hoppi-discord.gitbook.io/hoppi-docs/">Docs</a> </li>
+                       <li class=""> <a target="_blank" href="https://github.com/hoppibot/hoppi">Github</a> </li>
+                       <li class=""> <a href="devs.html">Creators</a></li>
+                     </ul>
+                   </li>
+                 </ul>
+               </li>
         </ul>
     </head>
 
@@ -51,6 +62,7 @@
             
         </div>
         <div></div>
+        <div class="hvr-backward">
         <footer>
             <a href="../index.html" style="
                 text-decoration: none;
@@ -60,6 +72,7 @@
                 text-align: center;
             "><span style="font-size: 25px;">←</span> Home</a>
         </footer>
+        </div>
 
         <br><br><br><br><br>
 
@@ -76,5 +89,12 @@
             </span><br><br><span style="font-size: 15px; font-style: normal; color: #aaaaad;">Copyright © 2020 Hoppi Inc</span>
             <br><br><img title="Hoppi's logo" style="border-radius: 50px; height: 75px; width: auto; cursor: pointer;" onclick="window.open('../images/logo.jpg')" src="../images/logo.jpg">
     </p>
+
+    <style>
+        img {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+    </style>
     </body>
 </html>
