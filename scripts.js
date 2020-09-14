@@ -24,7 +24,6 @@ function darkmodeOnClick() {
     let selects = document.getElementsByClassName('featureStyleTitle');
     let more = document.getElementsByTagName('h1');
     let desc = document.getElementsByClassName('featureStyleDesc')
-    let main = document.getElementById('navigationMain')
     let para = document.getElementsByTagName('p')
 
     if (e2.innerHTML === 'Light Mode') {
@@ -33,7 +32,6 @@ function darkmodeOnClick() {
 
         e2.innerHTML = 'Light Mode On'
         e.style.background = 'white'
-        main.style.color = 'black'
         for (i = 0; i < more.length; i++) {
             more[i].style.color = 'black'
         }
@@ -44,7 +42,6 @@ function darkmodeOnClick() {
             selects[i].style.color = 'black'
         }
         for (i = navigation.length - 1; i >= 0; i--) {
-            // console.info(navigation)
             navigation[i].className = 'navigationDark'
         }
         for (i = 0; i < para.length; i++) {
@@ -55,7 +52,6 @@ function darkmodeOnClick() {
 
         e2.innerHTML = 'Light Mode'
         e.style.background = '#131B21'
-            main.style.color = 'white'
         
         let navigation = document.getElementsByClassName('navigationDark')
         
