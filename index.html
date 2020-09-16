@@ -1,9 +1,10 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="shortcut icon" type="image/x-icon" href="images/logo.jpg">
-        <script type="text/javascript" src="scripts.js">
+        <script type="text/javascript" src="scripts.js"></script>
+        <script>
             function generateRandomString() {
                 const rand = Math.floor(Math.random() * 10);
                 let randStr = '';
@@ -34,9 +35,19 @@
                     })
                         .then(res => res.json())
                         .then(response => {
-                            console.log(response);
-                            const { username, discriminator } = response;
-                            document.getElementById('info').innerHTML = `${username}#${discriminator}`;
+                            // console.log(response);
+                            const { username, discriminator, id, avatar } = response;
+                            let link = document.getElementById('login')
+                            link.innerHTML = `${username}#${discriminator}`;
+                            link.removeAttribute('href')
+
+                            let div = document.getElementById('loginDiv')
+                            var elem = document.createElement("img");
+                            elem.setAttribute("src", `https://cdn.discordapp.com/avatars/${id}/${avatar}.webp`)
+                            elem.setAttribute("height", '50')
+                            elem.setAttribute("width", 'auto')
+                            elem.style.borderRadius = '20px'
+                            div.appendChild(elem)
                         })
                         .catch(console.error);
 
@@ -50,6 +61,9 @@
                 }
             }
         </script>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Montserrat');
+        </style>
 
         <title>Hoppi - the Discord Bot</title>
 
@@ -76,10 +90,11 @@
               </ul>
             </li>
         </ul>
-<!--         <div>
-            <a id="login" class="loginButton" href="https://discord.com/api/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fhoppibot.github.io%2Fhoppi&response_type=code&scope=identify%20guilds">
+        <div style="float: right; vertical-align: top;">
+            <div id="loginDiv" style="display: inline; vertical-align: top;"></div>
+            <a id="login" class="loginButton" href="https://discord.com/api/oauth2/authorize?client_id=729803338228695060&redirect_uri=http%3A%2F%2Flocalhost%3A9000&response_type=token&scope=identify%20guilds">
             Login</a>
-        </div> -->
+        </div>
     </head>
     <meta data-react-helmet="true" name="viewport" 
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -89,9 +104,11 @@
         content="https://i.imgur.com/WNvcYtD.jpg"/>
     <meta data-react-helmet="true" property="twitter:card" content="summary"/>
     <meta data-react-helmet="true" property="twitter:site" content="Hoppi Website"/>
-    <meta data-react-helmet="true" name="description" content="The official Hoppi website!"/>
+    <meta data-react-helmet="true" name="description" content="The official Hoppi Discord Bot website! You can 
+    invite Hoppi with this link: https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot !"/>
     <meta data-react-helmet="true" property="og:title" content="Hoppi - the Discord Bot"/>
-    <meta data-react-helmet="true" property="og:description" content="The official Hoppi website!"/>
+    <meta data-react-helmet="true" property="og:description" content="The official Hoppi Discord Bot website! You can 
+    invite Hoppi with this link: https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot !"/>
 
     <body id="body">
         
@@ -99,7 +116,7 @@
             <br><br><br><br><br>
             <div class="hvr-bob"><img class="logo" src="images/logo.jpg" onclick="window.open('images/logo.jpg', '_blank')"></div>
             <br><br><br>
-            <h1 class="title"> Make an awesome Discord server with Hoppi!
+            <h1 class="title blockLetters"> Make an awesome Discord server with Hoppi!
             </h1>
             <p style=
                 "text-align: center;
@@ -111,7 +128,7 @@
             </p>
             <br>
             <div class="hvr-bob"><div class="hvr-grow"><a class="inviteButton" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&permissions=2079849719&scope=bot" 
-            target="_blank" id="inviteButton"><img id="plus" src="images/plus sign.png" style="height: 20px; width: auto; vertical-align: text-bottom; position: relative; bottom: 1px; cursor: pointer;"> 
+            target="_blank" id="inviteButton"><!--<img id="plus" src="images/plussign.png" style="height: 20px; width: auto; vertical-align: text-bottom; position: relative; bottom: 1px; cursor: pointer;">-->  
             Add to Server</a></div></div><br><br><br>
             <div class="hvr-bob"><div class="hvr-grow"><a class="featureButton" onclick="scrollToFeatures()">Features</a></div></div>
             <div class="hvr-bob"><div class="hvr-grow"><a class="feedbackScrollButton" onclick="scrollToFeedback()"><span style="font-size: 18px;">Feedback</span></a></div></div>
@@ -123,7 +140,7 @@
             "text-align: center;
             color: #BDBDBF;
             font-style: italic;
-            font-family: Calibri, sans-serif; 
+            font-family: Montserrat, sans-serif; 
             font-size: 20px;">
             <span style="font-style: normal; font-weight: 600; color: white; white-space: pre-wrap;"><br><br>Bot Prefix:   <span style="font-size: 30px;">;</span></span><br><br>(a semi-colon, eg. <span class="code">;help</span>)
             </p>
@@ -139,81 +156,103 @@
             font-family: Calibri, sans-serif; 
             font-size: 20px;">You can give feedback, suggestions, report bugs, hang out, or just talk with other users!<br>We welcome all members that follow our community rules.</p>
             <br><br>
-            <div class="hvr-bob"><div class="hvr-grow"><a class="inviteButton" target="_blank" href="https://discord.gg/bVJtZpZ">Support Server</a></div></div>
-            <br><br><br><br>
+            <div class="hvr-bob"><div class="hvr-grow"><a class="supportServerButton" target="_blank" href="https://discord.gg/bVJtZpZ">Support Server</a></div></div>
+            <br><br><br><br><br>
+            <div class="container">
+                <div class="flip">
+                  <div class="front">
+                      <span style="color: #7289DA; cursor: default; font-size: 60px; font-weight: 999; font-family: Montserrat, sans-serif;">
+                        <div class="hvr-grow hvr-bob"><img src="https://www.freepnglogos.com/uploads/discord-logo-png/masgter-martin-gatzka-deviantart-7.png" style="
+                        display: inline-block;
+                        height: 50px;
+                        width: auto;
+                        "></div><a target="_blank" href="https://discord.gg/bVJtZpZ" style="color: #7289DA; cursor: default; font-size: 60px; font-weight: 999; font-family: Montserrat, sans-serif; text-decoration: none; cursor: pointer;">DISCORD</a></span>
+                    </div>
+                  <div class="back">
+                    <span style="color: #7289DA; cursor: default; font-size: 60px; font-weight: 999; font-family: Montserrat, sans-serif;">
+                        <a target="_blank" href="https://discord.gg/bVJtZpZ" style="color: #7289DA; cursor: default; font-size: 60px; font-weight: 999; font-family: Montserrat, sans-serif; text-decoration: none; cursor: pointer;">DISCORD</a> 
+                        <div class="hvr-grow hvr-bob"><img src="https://www.freepnglogos.com/uploads/discord-logo-png/masgter-martin-gatzka-deviantart-7.png" style="
+                        display: inline-block;
+                        height: 50px;
+                        width: auto;
+                        "></div></span>
+                </div>
+                </div>
+              </div>
+              <br><br><br>
             <iframe style="border-radius: 25px 25px 0 25px;" id="supportWidget" src="https://discordapp.com/widget?id=733727076464459906&theme=dark" width="350" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
             <br>
         </div>
         
         <br><br><br>
 
-        <div class="scrolltotop" onclick="
+        <div class="scrolltotop" id="scrolltotop" onclick="
             let top = document.getElementById('topNavigation')
             top.scrollIntoView()
         "><img src="images/mouse.png" style="
-        height: 30px; 
+        height: 15px; 
         width: auto;
         position: relative;
-        top: 8px;
+        top: 5px;
         cursor: pointer;
         "><br>Scroll to Top</div>
         <br><br><br>
         <!--Features-->
         <div>
             <br><br><br>
-            <h2 class="features" id="featuresHeader">𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</h2>
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 25px 50px 0;" src="images/leaderboard.png">
-            <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br>💰 Currency</p>
+            <h2 class="features" id="featuresHeader">Features</h2>
+            <div class="hvr-bob"><img style="display: inline; vertical-align: top; border-radius: 25px; margin: 0 25px 50px 0;" src="images/leaderboard.png">
+            </div><div style="display: inline-block;">
+                <p class="featureStyleTitle"><br>&#128176; Currency</p>
                 <p class="featureStyleDesc">Earn currency by gambling, begging, or getting it for free,<br> and try to become the richest user in the <strong>WORLD!</strong><br>(In the world of Hoppi)</p>
                 
             </div>
             <div></div>
             
             <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br>🎉 Fun</p>
+                <p class="featureStyleTitle"><br><br>&#127881; Fun</p>
                 <p class="featureStyleDesc">Use funny commands, play games, get cool random pictures,<br> or just waste your time using Hoppi's<br> vast category of fun commands!</p>
                 
             </div>
-            <img style="display: inline-block; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 25px;" src="images/rpsPlaying.png">
-            <div></div>
+            <div class="hvr-bob"><img style="display: inline-block; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 25px;" src="images/rpsPlaying.png">
+            </div><div></div>
 
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/deepfry.png">
-            <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br>📷 Photoshop</p>
+            <div class="hvr-bob"><img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/deepfry.png">
+            </div><div style="display: inline-block;">
+                <p class="featureStyleTitle"><br><br><br>&#128247; Photoshop</p>
                 <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">Edit images easily by either mentioning a user to use their profile pic,<br>or provide a link and Hoppi will use that image, <br> then use a specific method and you're done!<br><br>Hoppi only supports the following image formats for links: <br><span class="code">png, jpeg, gif, bmp, tiff</span><br><br>Also keep in mind that Hoppi cannot use screenshots,<br> the image must be hosted online.</p>
                 
             </div>
             <div></div>
 
             <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br><br>🤣 Memes</p>
+                <p class="featureStyleTitle"><br><br><br>&#129315; Memes</p>
                 <p class="featureStyleDesc">Create memes using Hoppi's meme creator feature!<br>Specify the template (see templates by using <span class="code">;meme templates</span>),<br> and then your texts separated by two dashes!<br><br>You can also use the simple <span class="code">;meme</span> to get a random meme from Reddit!</p>
                 
             </div>
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 25px;" src="images/meme.png">
-            <div></div>
+            <div class="hvr-bob"><img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 25px;" src="images/meme.png">
+            </div>div></div>
 
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/not stonks.jpg">
-            <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br><br>🔎 Internet Searches</p>
+            <div class="hvr-bob"><img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/notstonks.jpg">
+            </div><div style="display: inline-block;">
+                <p class="featureStyleTitle"><br><br><br>&#128270; Internet Searches</p>
                 <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">Search websites such as Reddit, Google Images,<br> the Urban Dictionary, Giphy, Wikipedia, and many more<br> for images, definitions, and gifs!</p>
                 
             </div>
             <div></div>
 
             <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br><br>👮 Server Management</p>
+                <p class="featureStyleTitle"><br><br><br>&#128110; Server Management</p>
                 <p class="featureStyleDesc">Hoppi makes server management easier for you with commands<br> such as purge, snipe, editsnipe, <br>and logging events that occur in your server!</p>
                 
             </div>
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 25px ;" src="images/editsnipe.png">
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 0;" src="images/snipe.png">
-            <div></div>
+            <div class="hvr-bob"><img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 25px ;" src="images/editsnipe.png">
+            </div><div class="hvr-bob"><img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 0;" src="images/snipe.png">
+            </div><div></div>
 
-            <img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/userinfo.png">
-            <div style="display: inline-block;">
-                <p class="featureStyleTitle"><br><br><br><br><br>📚 Info Commands</p>
+            <div class="hvr-bob"><img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/userinfo.png">
+            </div><div style="display: inline-block;">
+                <p class="featureStyleTitle"><br><br><br><br><br>&#128218; Info Commands</p>
                 <p class="featureStyleDesc" style="display: inline; margin: 0 10px 0 0;">View another user's or your info by using Hoppi's userinfo command!<br>Hoppi also has commands that display your server's info,<br> such as bans, roles, role permissions, and much more!</p>
                 
             </div>
@@ -232,9 +271,9 @@
             "text-align: center;
             display: inline-block;
             color: white;
-            font-family: Calibri, sans-serif; 
+            font-family: Montserrat, sans-serif; 
             font-weight: 700;
-            font-size: 40px;">📖 Feedback</h1>
+            font-size: 40px;">&#128214; Feedback</h1>
         <p style=
             "text-align: center;
             color: #BDBDBF;
@@ -248,7 +287,7 @@
         src="https://docs.google.com/forms/d/e/1FAIpQLSfXMPPoYJLVAuiKUrmHA20QF063oP5auqG5ddRTCgvxpGYSFw/viewform"></iframe>
         </div>
         <br><br><br><br><br>
-        <h1 id="verifyHeader" style=
+        <!-- <h1 id="verifyHeader" style=
             "text-align: center;
             display: inline-block;
             color: white;
@@ -258,22 +297,23 @@
             <img style="cursor: default;" height="75px" width="auto" src="images/verify.png">
             <span style="position: relative; bottom: 20px;">Verify with Hoppi</span><br>
             <span class="featureStyleDesc">Clicking this button will request access to your username, avatar, and servers.</span></h1>
-        <br>
-        <div class="hvr-bob"><div class="hvr-grow"><a class="verifyButton" target="_blank" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds">
+        <br> -->
+        <!-- <div class="hvr-bob"><div class="hvr-grow"><a class="verifyButton" target="_blank" href="https://discord.com/oauth2/authorize?client_id=729803338228695060&redirect_uri=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorized&response_type=code&scope=identify%20guilds">
             Verify</a></div></div>
         <p style=
         "text-align: center;
         color: #BDBDBF;
         font-family: Calibri, sans-serif; 
-        font-size: 20px;"><br>Your info will not be used or shared with anyone.</p>
+        font-size: 20px;"><br>Your info will not be used or shared with anyone.</p> -->
 
         <h1 id="linksHeader" style="text-align: center;
         display: inline-block;
         color: white;
-        font-family: Calibri, sans-serif; 
+        font-family: Montserrat, sans-serif; 
         font-weight: 700;
         font-size: 40px;
         position: relative;
+        user-select: none;
         top: 20px;"><img src="images/link.png" style="cursor: default; height: 120px; width: auto; position: relative; top: 40px; right: 30px;"><span style="position: relative; right: 40px;">Links</span></h1>
         <p style="text-align: center;
         color: #BDBDBF;
@@ -302,7 +342,7 @@
 
         navigator.clipboard.writeText(invite.getAttribute('value'))
         invite.style.background = '#09e809'
-        invite.innerHTML = 'Copied!'
+        invite.innerHTML = 'Copied'
         setTimeout(function() {
             invite.style.background = '#131B21'
             invite.innerHTML = 'Invite'
@@ -331,13 +371,13 @@
 
             navigator.clipboard.writeText(support.getAttribute('value'))
             support.style.background = '#09e809'
-            support.innerHTML = 'Copied!'
+            support.innerHTML = 'Copied'
             setTimeout(function() {
                 support.style.background = '#131B21'
                 support.innerHTML = 'Server'
             }, 1250)
         ">Server</a></div>
-        <div class="hvr-bob"><a class="linkButton" id="verifyLink" value="https://discord.com/login?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D729803338228695060%26redirect_uri%3Dhttps%253A%252F%252Fdiscord.com%252Foauth2%252Fauthorized%26response_type%3Dcode%26scope%3Didentify%2520guilds" onclick="
+        <div class="hvr-bob"><a hidden id="verifyLink" value="https://discord.com/login?redirect_to=%2Foauth2%2Fauthorize%3Fclient_id%3D729803338228695060%26redirect_uri%3Dhttps%253A%252F%252Fdiscord.com%252Foauth2%252Fauthorized%26response_type%3Dcode%26scope%3Didentify%2520guilds" onclick="
         let verify = document.getElementById('verifyLink')
 
         let github = document.getElementById('githubLink')
@@ -360,7 +400,7 @@
 
         navigator.clipboard.writeText(verify.getAttribute('value'))
         verify.style.background = '#09e809'
-        verify.innerHTML = 'Copied!'
+        verify.innerHTML = 'Copied'
         setTimeout(function() {
             verify.style.background = '#131B21'
             verify.innerHTML = 'Verify'
@@ -390,7 +430,7 @@
 
         navigator.clipboard.writeText(docs.getAttribute('value'))
         docs.style.background = '#09e809'
-        docs.innerHTML = 'Copied!'
+        docs.innerHTML = 'Copied'
         setTimeout(function() {
             docs.style.background = '#131B21'
             docs.innerHTML = 'Docs'
@@ -419,7 +459,7 @@
 
         navigator.clipboard.writeText(feedback.getAttribute('value'))
         feedback.style.background = '#09e809'
-        feedback.innerHTML = 'Copied!'
+        feedback.innerHTML = 'Copied'
         setTimeout(function() {
             feedback.style.background = '#131B21'
             feedback.innerHTML = 'Feedback'
@@ -448,7 +488,7 @@
 
         navigator.clipboard.writeText(github.getAttribute('value'))
         github.style.background = '#09e809'
-        github.innerHTML = 'Copied!'
+        github.innerHTML = 'Copied'
         setTimeout(function() {
             github.style.background = '#131B21'
             github.innerHTML = 'Github Repo'
@@ -457,20 +497,17 @@
         
         <br><br><br><br><br><br><br><br><br><br><br>
         <div class="hvr-forward">
-            <footer>
-                <a href="more/devs.html" style="
-                    text-decoration: none;
-                    color: gold;
-                    font-family: Calibri, sans-serif;
-                    font-size: 30px;
-                    text-align: center;
-                ">Creators <span style="font-size: 25px;">→</span></a>
-            </footer>
+            <a href="more/devs.html" style="
+                text-decoration: none;
+                color: gold;
+                font-family: Montserrat, sans-serif;
+                font-size: 30px;
+            ">Creators &#10230;</a>
         </div>
 
         <br><br><br><br><br>
         <p id="light" hidden>Light Mode</p>
-        <p class="featureStyleDesc">Light Mode</p>
+        <p class="featureStyleDesc"><span style="font-family: Montserrat, sans-serif;">Light Mode</span></p>
         <label class="switch">
             <input onclick="darkmodeOnClick()" type="checkbox">
             <span class="slider round"></span>
