@@ -87,6 +87,10 @@ h3 {
 	cursor: default;
 }
 
+.tos-header {
+	color: white;
+}
+
 img.logo:hover {
 	cursor: pointer;
 	transform: scale(1.1);
