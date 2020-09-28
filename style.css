@@ -89,6 +89,12 @@ h3 {
 
 .tos-header {
 	color: white;
+	font-family: Montserrat, sans-serif;
+}
+
+.tos-p {
+	color: white;
+	font-family: Montserrat, sans-serif;
 }
 
 img.logo:hover {
