@@ -8,4 +8,4 @@ There is no `code` related to the actual bot commands.
 
 Thank you for using Hoppi!
 
-![Hoppi's Logo](https://imgur.com/5Ct4k2S)
+![Hoppi's Logo](https://imgur.com/5Ct4k2S.jpg)
