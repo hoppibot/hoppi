@@ -41,15 +41,25 @@
                             const { username, discriminator, id, avatar } = response;
                             let link = document.getElementById('login')
                             link.innerHTML = `${username}#${discriminator}`;
-                            link.removeAttribute('href')
+                            link.setAttribute('href', 'https://discordapp.com/app')
+                            link.setAttribute('target', '_blank')
+                            link.setAttribute('title', `Signed in as ${username}`)
 
                             let div = document.getElementById('loginDiv')
                             var elem = document.createElement("img");
                             elem.setAttribute("src", `https://cdn.discordapp.com/avatars/${id}/${avatar}.webp`)
                             elem.setAttribute("height", '50')
                             elem.setAttribute("width", 'auto')
-                            elem.style.borderRadius = '20px'
+                            var url1 = `https://cdn.discordapp.com/avatars/${id}/${avatar}.webp?size=4096`
+                            elem.setAttribute("onclick", `window.open('`+url1+`')`)
+                            elem.setAttribute('title', `${username}'s avatar`)
+                            // elem.setAttribute("onclick")
+                            elem.style.borderRadius = '25px'
+                            elem.style.cursor = 'pointer'
                             div.appendChild(elem)
+                            
+                            let e2 = document.getElementById('tooltiptext')
+                            e2.innerHTML = `Signed in as ${username}` 
                         })
                         .catch(console.error);
 
@@ -88,17 +98,20 @@
                     <li class=""> <a target="_blank" href="https://github.com/hoppibot/hoppi">Github</a> </li>
                     <li class=""> <a href="more/devs.html">Creators</a></li>
                     <li class=""> <a href="more/tos.html">Terms of Service</a></li>
-                    <li class=""> <a href="more/privacy.html">Privacy Notice</a></li>
+                    <li class=""> <a href="more/privacy.html">Privacy Policy</a></li>
                   </ul>
                 </li>
               </ul>
             </li>
+            <li><div style="float: right; vertical-align: top;">
+                <div id="loginDiv" style="display: inline; vertical-align: top; position: relative; top: 2px;"></div>
+                <a id="login" class="loginButton" href="https://discord.com/api/oauth2/authorize?client_id=729803338228695060&redirect_uri=http%3A%2F%2Flocalhost%3A9000&response_type=token&scope=identify%20guilds">
+                    <div class="tooltip">Login
+                        <span class="tooltiptext" id="tooltiptext">Click to login</span>
+                      </div></a>
+            </div></li>
         </ul>
-        <div style="float: right; vertical-align: top;">
-            <div id="loginDiv" style="display: inline; vertical-align: top; position: relative; bottom: 100px;"></div>
-            <a id="login" class="loginButton" href="https://discord.com/api/oauth2/authorize?client_id=729803338228695060&redirect_uri=http%3A%2F%2Flocalhost%3A9000&response_type=token&scope=identify%20guilds">
-            Login</a>
-        </div>
+        
     </head>
     <meta data-react-helmet="true" name="viewport" 
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -236,7 +249,7 @@
                 
             </div>
             <div class="hvr-bob"><img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 0 50px 25px;" src="images/meme.png">
-            </div>div></div>
+            </div></div>
 
             <div class="hvr-bob"><img style="display: inline; vertical-align: top; border-radius: 25px; margin: 50px 25px 50px 0 ;" src="images/notstonks.jpg">
             </div><div style="display: inline-block;">
@@ -500,7 +513,9 @@
         }, 1250)
         ">Github Repo</a></div>
         
-        <br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+        <hr style="width: 75%;">
+        <br><br><br><br><br><br>
         <div class="hvr-forward">
             <a href="more/devs.html" style="
                 text-decoration: none;
@@ -524,9 +539,9 @@
             "position: relative; top: 28px; background-color: #000000; padding: 50px;text-align: center; color: #BDBDBF; font-family: Calibri, sans-serif; font-size: 18px; font-style: italic; font-weight: 500;">
             Hoppi is still in development!<br>Please report bugs and give feedback above
             or in our official <a style="color: skyblue; text-decoration: none;" href="https://discord.gg/bVJtZpZ" target="_blank">support server!</a>
-            <br><br><span style="font-style: normal;">This website created from scratch by <a href="more/devs.html" style="color: #BDBDBF; text-decoration-color: skyblue; color: skyblue;">p0tato#5991</a>.
+            <br><br><span style="font-style: normal;">This website created was from scratch by <a href="more/devs.html" style="color: #BDBDBF; text-decoration-color: skyblue; color: skyblue;">p0tato#5991</a>.
             <br>Thanks to <a style="color: #BDBDBF; text-decoration-color: skyblue; color: skyblue;" target="_blank" href="https://pages.github.com">Github</a> for hosting this website.
-            </span><br><br><span style="font-size: 15px; font-style: normal; color: #aaaaad;">Copyright © 2020 Hoppi Inc</span>
+            </span><br><br><span style="font-size: 15px; font-style: normal; color: #aaaaad;">Copyright &#x00A9; 2020 Hoppi Inc</span>
             <br><br><img title="Hoppi's logo" style="border-radius: 50px; height: 75px; width: auto; cursor: pointer;" onclick="window.open('images/logo.jpg')" src="images/logo.jpg">
     </footer>
 </html>
