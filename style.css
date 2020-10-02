@@ -133,6 +133,19 @@ img:hover {
 	animation-direction: normal, alternate; */
 }
 
+.link {
+	color: skyblue;
+	text-decoration: none;
+	font-family: Montserrat, sans-serif;
+	transition: .2s linear;
+}
+
+.link:hover {
+	display: inline-block;
+	transition: .3s linear;
+	transform: scale(1.01);
+}
+
 .navigationButtons {
 	list-style-type: none;
 	margin: 0;
@@ -384,6 +397,23 @@ a.supportServerButton:hover {
 	z-index: 1;
 }
 
+.GamerzScrollButton {
+	display: inline-block;
+	text-align: center;
+	color: white;
+	background-color: #131B21;
+	padding: 10px 10px 10px 10px;
+	text-decoration: none;
+	height: 30px;
+	width: 75px;
+	border: solid 5px #233442;
+	border-radius: 10px;
+	font-family: 'Calibri', sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	z-index: 1;
+}
+
 .linkScrollButton {
 	display: inline-block;
 	text-align: center;
@@ -392,7 +422,7 @@ a.supportServerButton:hover {
 	padding: 10px 10px 10px 10px;
 	text-decoration: none;
 	height: 30px;
-	width: 65px;
+	width: 75px;
 	border: solid 5px #233442;
 	border-radius: 10px;
 	font-family: 'Calibri', sans-serif;
@@ -1035,9 +1065,7 @@ li a:hover {
     display: block;
     margin: 0 auto;
     fill: white;
-  }
-
-
+}
 
 
 
